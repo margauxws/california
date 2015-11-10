@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        var mapOptions = {
+          zoom: 13,
+          center: new google.maps.LatLng(35.728489, -117.346464)
+        };
+
+        var positions = [
+          {
+            'title':'Alien Football Field',
+            'map': new google.maps.LatLng(35.707037, -117.344445),
+            'link':'http://cooper.edu',
+            'html':'<img src=http://kdl.kyvl.org/nyx.php?href=http://nyx.uky.edu/tiles/tile.php?Path=http://nyx.uky.edu/dips/xt7nvx05xv47/data/2042/.AND.Image=2042.AND.Start=313722.AND.Length=14021.AND.Format=jpg />'
+          },
+          {
+            'title':'Sad Patch of Grass',
+            'map':new google.maps.LatLng(35.708994, -117.382563),
+            'html':'<img src=http://houstongrasssouth.com/wp-content/uploads/2009/03/tifway2-100x100.jpg />'
+          },
+          {
+            'title':'Small Black Hole of Death',
+            'map': new google.maps.LatLng(35.743548, -117.380564),
+            'html':'<img src=http://hubblesite.org/explore_astronomy/black_holes/graphics/credit_lensing.jpg />'
+          },
+
+        ];
+
+        draw('map', mapOptions, positions);
+      });
+
+      // google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+        <style>
+      #map {
+        height:800px;
+        margin: auto;
+        width:800px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
